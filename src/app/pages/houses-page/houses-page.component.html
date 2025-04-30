@@ -1,0 +1,13 @@
+<section class="flex flex-col text-center mb-5 mt-5">
+  <h3 class="text-xl text-gray-500 ">{{ houses().length }} Casas Disponibles</h3>
+</section>
+
+<section class="px-3 sm:px-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2">
+  <!-- CARD -->
+
+  @for (item of houses(); track item.id; let i = $index) {
+     <app-mini-map [item]="item" [i]="i"></app-mini-map>
+  }
+
+  <!--  -->
+</section>

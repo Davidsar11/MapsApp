@@ -1,0 +1,44 @@
+<div #map class="h-[55vh] sm:h-[calc(100vh-64px)]"></div>
+
+<section
+  class="h-[25vh] sm:fixed sm:w-[260px] bg-white sm:rounded sm:top-20 sm:left-10 p-5 overflow-y-scroll overflow-x-visible"
+>
+  <h2 class="text-xl font-bold text-black mb-2 text-center">Marcadores</h2>
+
+  <div class="flex flex-col gap-3 text-center">
+    @for (marker of markers(); track $index) {
+    <div
+      class="form-control"
+      (click)="flyToMarker(marker.getLngLat())"
+      (dblclick)="deleteMarker(marker)"
+    >
+      <label class="label cursor-pointer ">
+        <span class="label-text text-black text-xs hidden sm:block">
+
+          Lng: {{ marker.getLngLat().lng | number:"1.5-5"  }}
+          <br class="hidden">
+          Lat: {{marker.getLngLat().lat | number:"1.5-5"}}
+        </span>
+
+        <span class="label-text text-black text-xs sm:hidden ">
+
+          Lng: {{ marker.getLngLat().lng | number:"1.8-8"  }}
+          <br class="hidden">
+          Lat: {{marker.getLngLat().lat | number:"1.8-8"}}
+        </span>
+        <input
+          type="radio"
+          name="radio-10"
+          checked="checked"
+          class="radio"
+          [style]="{ backgroundColor: marker._color }"
+        />
+      </label>
+    </div>
+    }@empty {
+    <div class="flex justify-center items-center bg-orange-100 rounded py-5">
+      <p class="text-xs text-secondary">No hay Marcadores</p>
+    </div>
+    }
+  </div>
+</section>
