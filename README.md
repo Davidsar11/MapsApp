@@ -1,7 +1,28 @@
-Levantar proyecto en dev
+# MapsApp
 
-1. Clonar repositorio
-2. Instalar las depedencias+
-3. Generar el .env basado en .env.template
-3.1 node ./scripts/set-env.js
+Para abirir la app, seguir el enlace a continuación: 
+https://mapas-sarmiento.netlify.app/
+
+Para instalar en local, clonar el repositorio, y en la carpeta raiz ejecutar
+
+```bash
+npm install
+```
+
+
+Después ejecutar 
+
+```bash
+ng serve -o
+```
+
+
+
+
+
+Más tarde  Generar el .env basado en .env.template:
+
+```bash
+node ./scripts/set-env.js
+```
 
